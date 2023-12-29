@@ -82,7 +82,7 @@ namespace SWRE.CLI
                     }
                 }
 
-                if (targetProcess != null && targetProcess.HasExited)
+                if (targetProcess != null && !targetProcess.HasExited)
                     targetProcess.WaitForExit();
                 else if (entryProcess != null && !entryProcess.HasExited)
                     entryProcess.WaitForExit();
