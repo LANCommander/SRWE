@@ -6,7 +6,7 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Globalization;
 using System.Windows.Forms;
-using SWRE.Shared;
+using SRWE.Shared;
 
 
 namespace SRWE.Shared

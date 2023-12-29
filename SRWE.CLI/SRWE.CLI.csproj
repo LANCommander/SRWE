@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B9FC42BC-D268-401E-A0D8-82F56C64BE8B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SWRE.CLI</RootNamespace>
-    <AssemblyName>SWRE.CLI</AssemblyName>
+    <RootNamespace>SRWE.CLI</RootNamespace>
+    <AssemblyName>SRWE.CLI</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

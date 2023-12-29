@@ -7,8 +7,8 @@
     <ProjectGuid>{C4D5B45A-0643-451E-82A3-D0E317FA7B8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SWRE.Shared</RootNamespace>
-    <AssemblyName>SWRE.Shared</AssemblyName>
+    <RootNamespace>SRWE.Shared</RootNamespace>
+    <AssemblyName>SRWE.Shared</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
