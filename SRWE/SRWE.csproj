@@ -145,9 +145,9 @@
     <Content Include="SRWE.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SWRE.Shared\SWRE.Shared.csproj">
+    <ProjectReference Include="..\SRWE.Shared\SRWE.Shared.csproj">
       <Project>{c4d5b45a-0643-451e-82a3-d0e317fa7b8b}</Project>
-      <Name>SWRE.Shared</Name>
+      <Name>SRWE.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
