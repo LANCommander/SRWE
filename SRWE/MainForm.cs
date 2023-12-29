@@ -10,6 +10,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.XPath;
 using System.Linq;
+using SRWE.Shared;
 
 namespace SRWE
 {
@@ -516,6 +517,9 @@ namespace SRWE
 
 		private static bool IsProcessRunning(Process process)
 		{
+			if (process == null)
+				return false;
+
 			try { return !process.HasExited; }
 			catch { return false; }
 		}

@@ -4,12 +4,12 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
-namespace SRWE
+namespace SRWE.Shared
 {
 	/// <summary>
 	/// Window class
 	/// </summary>
-	class Window
+	public class Window
 	{
 		private class ETWP_Param
 		{
@@ -394,7 +394,7 @@ namespace SRWE
 	/// <summary>
 	/// WinAPI class.
 	/// </summary>
-	static class WinAPI
+	public static class WinAPI
 	{
 		public const int GWL_STYLE = -16;
 		public const int GWL_EXSTYLE = -20;
@@ -474,7 +474,7 @@ namespace SRWE
 	/// RECT struct.
 	/// </summary>
 	[StructLayout(LayoutKind.Sequential)]
-	struct RECT
+	public struct RECT
 	{
 		public int left;
 		public int top;
@@ -497,7 +497,7 @@ namespace SRWE
 	/// WINDOWINFO struct.
 	/// </summary>
 	[StructLayout(LayoutKind.Sequential)]
-	struct WINDOWINFO
+	public struct WINDOWINFO
 	{
 		public uint cbSize;
 		public RECT rcWindow;

@@ -6,21 +6,22 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Globalization;
 using System.Windows.Forms;
+using SWRE.Shared;
 
 
-namespace SRWE
+namespace SRWE.Shared
 {
-	static class SRWE_Defaults
+	public static class SRWE_Defaults
 	{
-		internal static readonly bool ForceExitSizeMoveMessage = false;
-		internal static readonly bool AutoAttachToLastKnownProcess = false;
-		internal static readonly int MaxNumberOfRecentProfiles = 20;
+		public static readonly bool ForceExitSizeMoveMessage = false;
+		public static readonly bool AutoAttachToLastKnownProcess = false;
+		public static readonly int MaxNumberOfRecentProfiles = 20;
 	}
 
 	/// <summary>
 	/// SRWE_Settings class.
 	/// </summary>
-	static class SRWE_Settings
+	public static class SRWE_Settings
 	{
 		private static string s_settingsPath;
 		private static XmlDocument s_xmlSettings, s_xmlDefaultSettings;
@@ -29,10 +30,12 @@ namespace SRWE
 		private static List<string> s_recentProfiles;
 		private static List<string> s_recentProcesses;
         private static List<SRWE_HotKey> s_hotKeys = new List<SRWE_HotKey>();
+		private static byte[] XML_Settings;
 
 		static SRWE_Settings()
 		{
-			using(MemoryStream ms = new MemoryStream(Properties.Resources.XML_Settings))
+			XML_Settings = Encoding.UTF8.GetBytes(Resource.Settings);
+			using(MemoryStream ms = new MemoryStream(XML_Settings))
 			{
 				s_xmlDefaultSettings = new XmlDocument();
 				s_xmlDefaultSettings.Load(ms);
@@ -47,7 +50,7 @@ namespace SRWE
 
 				if(!File.Exists(s_settingsPath))
 				{
-					File.WriteAllBytes(s_settingsPath, Properties.Resources.XML_Settings);
+					File.WriteAllBytes(s_settingsPath, XML_Settings);
 				}
 				s_xmlSettings = new XmlDocument();
 				try
@@ -58,7 +61,7 @@ namespace SRWE
 				{
 					// failure during load, write out new settings file and load that one instead. This is nicer than flushing any older settings file as 
 					// we can now migrate any old file to new versions without flushing old settings. 
-					File.WriteAllBytes(s_settingsPath, Properties.Resources.XML_Settings);
+					File.WriteAllBytes(s_settingsPath, XML_Settings);
 					s_xmlSettings.Load(s_settingsPath);
 				}
 				bool versionMisMatch = !CheckSettingsVersion(s_xmlSettings.DocumentElement.Attributes["Version"]);
@@ -304,7 +307,7 @@ namespace SRWE
 	/// <summary>
 	/// SRWE_Utility class.
 	/// </summary>
-	static class SRWE_Utility
+	public static class SRWE_Utility
 	{
 		public static XmlElement AppendChildElement(XmlDocument document, XmlNode parent, string elementName)
 		{
@@ -381,7 +384,7 @@ namespace SRWE
             return "";
         }
 
-        internal static float SAFE_ParseRatio(string text)
+        public static float SAFE_ParseRatio(string text)
         {
 			string[] ratios = text.Split(':');
 			float w, h;
@@ -404,7 +407,7 @@ namespace SRWE
     /// <summary>
     /// SRWE_HotKey class.
     /// </summary>
-    class SRWE_HotKey
+    public class SRWE_HotKey
     {
         public string Name { get; private set; }
         public Keys? HotKey { get; private set; }

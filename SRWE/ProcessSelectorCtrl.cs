@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using SRWE.Shared;
 
 namespace SRWE
 {
